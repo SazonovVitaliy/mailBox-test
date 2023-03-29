@@ -3,7 +3,7 @@ import { Mail } from "@/types";
 
 interface dragMail {
   //???
-  dragMail: Object;
+  dragMail: any;
 }
 
 const initialState: dragMail = {
