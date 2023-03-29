@@ -1,0 +1,27 @@
+.sidebarMenuItem,
+.button {
+  font-size: 22px;
+  font-weight: 600;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.input {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20px;
+  & div {
+    margin-top: 0;
+  }
+  & input {
+    border-radius: 5px;
+  }
+}

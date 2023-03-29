@@ -1,0 +1,6 @@
+.listItem {
+  & :hover {
+    border-radius: 15px;
+    background-color: lightgray;
+  }
+}
