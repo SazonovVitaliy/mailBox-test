@@ -1,7 +1,7 @@
-import { Mail } from "@/types";
 import { FC } from "react";
 
 import MailsListItem from "./MailsListItem/MailsListItem";
+import { Mail } from "@/types/mails";
 
 import cn from "classnames";
 import s from "./mailsList.module.scss";

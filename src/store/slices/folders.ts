@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { folders as allFolders } from "@/const";
-import { Folder, Folders } from "@/types";
+import { folders as allFolders } from "@/shared/mocks/folders";
+import { Folder, Folders } from "@/types/folders";
 
 const initialState: Folders = {
   folders: allFolders,

@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-import { Mail } from "@/types";
-import { mails } from "@/const";
+import { Mail } from "@/types/mails";
+import { mails } from "@/shared/mocks/mails";
 
 import s from "./generalMailPage.module.scss";
 

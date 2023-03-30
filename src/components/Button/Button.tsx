@@ -4,9 +4,9 @@ import cn from "classnames";
 import s from "./button.module.scss";
 
 interface ButtonProps {
-  className?: string;
   onClick: () => void;
   children: ReactNode;
+  className?: string;
 }
 
 const Button: FC<ButtonProps> = ({ onClick, className, children }) => {

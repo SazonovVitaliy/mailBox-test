@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { mails as allMails } from "@/const";
-import { Mail, Mails } from "@/types";
+import { mails as allMails } from "@/shared/mocks/mails";
+import { Mail, Mails } from "@/types/mails";
 
 const initialState: Mails = {
   mails: allMails,

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { addDragMail } from "@/store/slices/dragAndDrop";
 import { useAppDispatch } from "@/store/hooks";
 
-import { Mail } from "@/types";
+import { Mail } from "@/types/mails";
 
 import cn from "classnames";
 import s from "./mailsListItem.module.scss";
@@ -34,8 +34,10 @@ const MailsListItem: FC<MailsListItemProps> = ({ mail, className }) => {
     e.preventDefault();
   }
 
+  const handleRemoveMail = () => {};
+
   return (
-    <li className={cn(className)}>
+    <li className={cn(className, s.link)}>
       <Link href={`${route}/${mail.id}`} className={s.wrapper}>
         <div
           className={s.listItem}

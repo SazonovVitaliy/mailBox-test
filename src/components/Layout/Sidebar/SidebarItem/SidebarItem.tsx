@@ -4,7 +4,7 @@ import Link from "next/link";
 import Input from "@/components/Input/Input";
 import Button from "@/components/Button/Button";
 
-import { Folder } from "@/types";
+import { Folder } from "@/types/folders";
 
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { removeFolder, renameFolder } from "@/store/slices/folders";
@@ -22,7 +22,7 @@ const SidebarItem: FC<SidebarItemProps> = ({ folder }) => {
   const [folderName, setFolderName] = useState<string>("");
   const [renameInput, setRenameInput] = useState<boolean>(false);
 
-  let { dragMail } = useAppSelector((state) => state.dragMail);
+  const { dragMail } = useAppSelector((state) => state.dragMail);
   const currFolder = folder.route.slice(1);
 
   const handleRemoveFolder = (id: number) => {
@@ -49,8 +49,8 @@ const SidebarItem: FC<SidebarItemProps> = ({ folder }) => {
 
   const dragAndDropHandler = () => {
     dispatch(removeDragMail(dragMail));
-    dragMail = { ...dragMail, folder: currFolder };
-    dispatch(addDropMail(dragMail));
+    const movedMail = { ...dragMail, folder: currFolder };
+    dispatch(addDropMail(movedMail));
   };
 
   const handleRenameFolder = () => {
@@ -86,8 +86,8 @@ const SidebarItem: FC<SidebarItemProps> = ({ folder }) => {
 
       default:
         dispatch(removeDragMail(dragMail));
-        dragMail = { ...dragMail, folder: folder.route };
-        dispatch(addDropMail(dragMail));
+        const movedMail = { ...dragMail, folder: folder.route };
+        dispatch(addDropMail(movedMail));
 
         break;
     }
@@ -104,7 +104,7 @@ const SidebarItem: FC<SidebarItemProps> = ({ folder }) => {
         onDrop={(e) => dropHandler(e, folder)}
       >
         <Link href={folder.route}>{folder.name}</Link>
-        {folder.button && (
+        {folder.withButton && (
           <>
             <div className={s.sidebarMenuItem}>
               <Button
@@ -126,6 +126,7 @@ const SidebarItem: FC<SidebarItemProps> = ({ folder }) => {
       {renameInput && (
         <div className={s.input}>
           <Input
+            value={folderName}
             className={s.inputField}
             type="text"
             placeholder="Введите название"

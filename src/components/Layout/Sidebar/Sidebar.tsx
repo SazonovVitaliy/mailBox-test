@@ -5,10 +5,9 @@ import Input from "@/components/Input/Input";
 
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { addFolder } from "@/store/slices/folders";
+import { Folder } from "@/types/folders";
 
 import SidebarItem from "./SidebarItem/SidebarItem";
-
-import { Folder } from "@/types";
 
 import s from "./sidebar.module.scss";
 
@@ -23,14 +22,13 @@ const Sidebar: FC = () => {
   useEffect(() => {
     setAllFolders(folders);
   }, [folders]);
-  console.log(folders);
 
   const handleAddFolder = () => {
     const newFolder: Folder = {
       id: folders.length + 1,
       name: folderName,
       route: (folders.length + 11).toString(),
-      button: true,
+      withButton: true,
     };
     folderName.length && dispatch(addFolder(newFolder));
     setFolderName("");
@@ -50,6 +48,7 @@ const Sidebar: FC = () => {
       {addInput && (
         <div className={s.input}>
           <Input
+            value={folderName}
             className={s.inputField}
             onChange={(e) => setFolderName(e.target.value)}
           />

@@ -1,5 +1,5 @@
+import { Mail } from "@/types/mails";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Mail } from "@/types";
 
 interface dragMail {
   dragMail: Mail;
