@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-
+  overflow: hidden;
   & *,
   *::before,
   *::after {
@@ -51,4 +51,9 @@ input {
   &:focus {
     outline: none;
   }
+}
+
+::-webkit-scrollbar {
+  overflow: auto;
+  scrollbar-width: thin;
 }
