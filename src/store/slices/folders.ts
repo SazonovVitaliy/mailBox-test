@@ -18,7 +18,13 @@ export const folders = createSlice({
         (folder) => folder.id !== action.payload
       );
     },
-    renameFolder(state: Folders, action: PayloadAction<Folder>) {},
+    renameFolder(state: Folders, action: PayloadAction<Folder>) {
+      state.folders.map((f) => {
+        if (f.id === action.payload.id) {
+          f.name = action.payload.name;
+        }
+      });
+    },
   },
 });
 

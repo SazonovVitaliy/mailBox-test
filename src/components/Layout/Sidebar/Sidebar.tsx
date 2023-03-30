@@ -29,6 +29,7 @@ const Sidebar: FC = () => {
       button: true,
     };
     folderName.length && dispatch(addFolder(newFolder));
+    setFolderName("");
     setAddInput(false);
   };
 
@@ -45,6 +46,7 @@ const Sidebar: FC = () => {
       {addInput && (
         <div className={s.input}>
           <input
+            className={s.inputField}
             type="text"
             placeholder="Введите название"
             onChange={(e) => setFolderName(e.target.value)}

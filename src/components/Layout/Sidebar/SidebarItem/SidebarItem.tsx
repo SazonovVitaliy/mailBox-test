@@ -56,6 +56,7 @@ const SidebarItem: FC<SidebarItemProps> = ({ folder }) => {
       name: folderName,
     };
     folderName.length && dispatch(renameFolder(rFolder));
+    setRenameInput(false);
   };
 
   const dragAndDrop = () => {
@@ -122,14 +123,15 @@ const SidebarItem: FC<SidebarItemProps> = ({ folder }) => {
       {renameInput && (
         <div className={s.input}>
           <input
+            className={s.inputField}
             type="text"
             placeholder="Введите название"
             onChange={(e) => setFolderName(e.target.value)}
           />
-          <div className={s.button} onClick={ handleRenameFolder}>
+          <span className={s.button} onClick={handleRenameFolder}>
             {" "}
             &#43;
-          </div>
+          </span>
         </div>
       )}
     </>

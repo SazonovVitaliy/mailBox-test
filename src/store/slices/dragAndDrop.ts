@@ -2,12 +2,20 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Mail } from "@/types";
 
 interface dragMail {
-  //???
-  dragMail: any;
+  dragMail: Mail;
 }
 
 const initialState: dragMail = {
-  dragMail: {},
+  dragMail: {
+    id: 0,
+    from: "",
+    address: "",
+    time: "",
+    msg: "",
+    title: "",
+    folder: "",
+    isRead: false,
+  },
 };
 
 export const dragMail = createSlice({

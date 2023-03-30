@@ -11,6 +11,8 @@ const GeneralPage: FC = () => {
   const { asPath } = useRouter();
 
   const allMails = mails?.filter((mail) => mail.folder === asPath.slice(1));
+  console.log(mails);
+  console.log(allMails);
 
   return (
     <>

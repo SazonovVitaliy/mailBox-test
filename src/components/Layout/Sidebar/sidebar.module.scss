@@ -5,7 +5,14 @@
 }
 
 .sidebarMenu {
-  & :hover {
+  max-width: 350px;
+  & div {
+    margin-right: -20px;
+  }
+  & span {
+    margin-right: 20px;
+  }
+  & li:hover {
     border-radius: 15px;
     background-color: lightgray;
   }
@@ -18,17 +25,14 @@
   font-size: 22px;
   font-weight: 600;
   padding: 10px 20px;
-
-  &:hover {
-    text-shadow: 2px 3px 10px #000000;
-  }
-}
-
-.button {
   margin-top: 30px;
   border-top: 1px solid lightgray;
   cursor: pointer;
   opacity: 0.5;
+
+  &:hover {
+    text-shadow: 2px 3px 10px #000000;
+  }
 }
 
 .input {
@@ -43,4 +47,9 @@
   & input {
     border-radius: 5px;
   }
+}
+
+.inputField {
+  max-width: 125px;
+  margin-top: 7px;
 }
