@@ -1,10 +1,9 @@
 import { Mail } from "@/types";
 import { FC } from "react";
 
-import cn from "classnames";
-
 import MailsListItem from "./MailsListItem/MailsListItem";
 
+import cn from "classnames";
 import s from "./mailsList.module.scss";
 
 interface MailsListProps {

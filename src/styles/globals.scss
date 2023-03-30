@@ -54,6 +54,6 @@ input {
 }
 
 ::-webkit-scrollbar {
-  overflow: auto;
-  scrollbar-width: thin;
+  overflow: hidden;
+  width: 0.1px;
 }

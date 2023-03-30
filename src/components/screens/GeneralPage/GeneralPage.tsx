@@ -1,8 +1,9 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { useRouter } from "next/router";
 
-import MailsList from "@/components/MailsList/MailsList";
 import { useAppSelector } from "@/store/hooks";
+
+import MailsList from "@/components/MailsList/MailsList";
 
 import s from "./generalPage.module.scss";
 
@@ -11,8 +12,6 @@ const GeneralPage: FC = () => {
   const { asPath } = useRouter();
 
   const allMails = mails?.filter((mail) => mail.folder === asPath.slice(1));
-  console.log(mails);
-  console.log(allMails);
 
   return (
     <>

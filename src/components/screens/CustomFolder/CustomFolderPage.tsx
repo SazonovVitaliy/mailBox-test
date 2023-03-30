@@ -1,7 +1,10 @@
+import { FC } from "react";
+
 import MailsList from "@/components/MailsList/MailsList";
+
 import { useAppSelector } from "@/store/hooks";
 import { useRouter } from "next/router";
-import { FC } from "react";
+
 import s from "./customFolderPage.module.scss";
 
 const CustomFolderPage: FC = () => {

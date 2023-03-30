@@ -1,10 +1,13 @@
 import { DragEvent, FC, useState } from "react";
 import Link from "next/link";
 
+import Input from "@/components/Input/Input";
+import Button from "@/components/Button/Button";
+
 import { Folder } from "@/types";
 
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { addFolder, removeFolder, renameFolder } from "@/store/slices/folders";
+import { removeFolder, renameFolder } from "@/store/slices/folders";
 import { addDropMail, removeDragMail } from "@/store/slices/mails";
 
 import s from "./sidebarItem.module.scss";
@@ -104,34 +107,34 @@ const SidebarItem: FC<SidebarItemProps> = ({ folder }) => {
         {folder.button && (
           <>
             <div className={s.sidebarMenuItem}>
-              <div
+              <Button
                 onClick={() => setRenameInput((prev) => !prev)}
                 className={s.button}
               >
                 &nbsp;&#x270E;
-              </div>
-              <div
+              </Button>
+              <Button
                 className={s.button}
                 onClick={() => handleRemoveFolder(folder.id)}
               >
                 &#x1f5d1;
-              </div>
+              </Button>
             </div>
           </>
         )}
       </li>
       {renameInput && (
         <div className={s.input}>
-          <input
+          <Input
             className={s.inputField}
             type="text"
             placeholder="Введите название"
             onChange={(e) => setFolderName(e.target.value)}
           />
-          <span className={s.button} onClick={handleRenameFolder}>
+          <Button className={s.button} onClick={handleRenameFolder}>
             {" "}
             &#43;
-          </span>
+          </Button>
         </div>
       )}
     </>

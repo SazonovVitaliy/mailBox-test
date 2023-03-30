@@ -1,6 +1,7 @@
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
+
 import Layout from "@/components/Layout/Layout";
 
 import { store } from "@/store";

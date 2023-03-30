@@ -1,5 +1,8 @@
 import { FC, useEffect, useState } from "react";
 
+import Button from "@/components/Button/Button";
+import Input from "@/components/Input/Input";
+
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { addFolder } from "@/store/slices/folders";
 
@@ -20,6 +23,7 @@ const Sidebar: FC = () => {
   useEffect(() => {
     setAllFolders(folders);
   }, [folders]);
+  console.log(folders);
 
   const handleAddFolder = () => {
     const newFolder: Folder = {
@@ -40,21 +44,19 @@ const Sidebar: FC = () => {
           <SidebarItem folder={folder} key={folder.id} />
         ))}
       </ul>
-      <div className={s.button} onClick={() => setAddInput((prev) => !prev)}>
+      <Button className={s.button} onClick={() => setAddInput((prev) => !prev)}>
         Новая папка &#x1f4c1;
-      </div>
+      </Button>
       {addInput && (
         <div className={s.input}>
-          <input
+          <Input
             className={s.inputField}
-            type="text"
-            placeholder="Введите название"
             onChange={(e) => setFolderName(e.target.value)}
           />
-          <div className={s.button} onClick={handleAddFolder}>
+          <Button className={s.button} onClick={handleAddFolder}>
             {" "}
             &#43;
-          </div>
+          </Button>
         </div>
       )}
     </div>

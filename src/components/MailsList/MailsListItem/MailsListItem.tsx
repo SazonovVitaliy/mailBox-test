@@ -2,13 +2,12 @@ import { DragEvent, FC } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import cn from "classnames";
-
 import { addDragMail } from "@/store/slices/dragAndDrop";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch } from "@/store/hooks";
 
 import { Mail } from "@/types";
 
+import cn from "classnames";
 import s from "./mailsListItem.module.scss";
 
 interface MailsListItemProps {
